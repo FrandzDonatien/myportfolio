@@ -1,4 +1,3 @@
-//
 /**
  * Portfolio Frandz DEV — comportements front.
  * Aucune dépendance : trois petits modules autonomes.
@@ -99,7 +98,89 @@ function initContactForm() {
     });
 }
 
+/* ---------- Révélation au scroll ---------- */
+function initReveal() {
+    const items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        items.forEach((el) => el.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+    items.forEach((el) => observer.observe(el));
+}
+
+/* ---------- Courbe du KPI : mesure le tracé puis le "dessine" ---------- */
+function initSparkline() {
+    const path = document.querySelector('.spark__line');
+    if (!path || !path.getTotalLength) return;
+
+    const length = path.getTotalLength();
+    path.style.setProperty('--spark-length', length);
+
+    // Un cycle de peinture pour que le navigateur parte bien de dashoffset = length
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => path.classList.add('is-drawn'));
+    });
+}
+
+/* ---------- Chiffres qui comptent au premier passage à l'écran ---------- */
+function initCounters() {
+    const holder = document.querySelector('[data-counter]');
+    if (!holder) return;
+
+    const targets = holder.querySelectorAll('[data-count]');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const run = () => {
+        targets.forEach((el) => {
+            const target = parseInt(el.dataset.count, 10) || 0;
+            const suffix = el.dataset.suffix || '';
+
+            if (reduced) {
+                el.textContent = target + suffix;
+                return;
+            }
+
+            const duration = 900;
+            const start = performance.now();
+
+            const tick = (now) => {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.round(target * eased) + suffix;
+                if (progress < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        });
+    };
+
+    if (!('IntersectionObserver' in window)) { run(); return; }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            run();
+            obs.unobserve(entry.target);
+        });
+    }, { threshold: 0.4 });
+
+    observer.observe(holder);
+}
+
 initTheme();
 initMenu();
 initScrollSpy();
 initContactForm();
+initReveal();
+initSparkline();
+initCounters();

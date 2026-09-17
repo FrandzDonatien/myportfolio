@@ -22,7 +22,8 @@
         <div class="hero__visual">
             <div class="portrait">
                 {{-- Dépose la photo détournée dans public/images/portrait.png --}}
-                <img class="portrait__note" src="{{ asset('hero.png') }}" alt="">
+                <img src="{{ asset('user.jpg') }}" alt="Franzd DEV">
+                <p class="portrait__note"></p>
                 <svg class="portrait__ph" viewBox="0 0 300 340" fill="none" aria-hidden="true">
                     <defs>
                         <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
@@ -38,17 +39,13 @@
                     <p class="kpi__label">Revenue Assurance</p>
                     <p class="kpi__value">+12.5% <x-icon name="trend" :size="15" /></p>
                     <svg class="spark" viewBox="0 0 220 56" fill="none" preserveAspectRatio="none" aria-hidden="true">
-                        <path d="M0 46 L22 40 L44 44 L66 30 L88 34 L110 22 L132 26 L154 14 L176 18 L198 8 L220 4"
+                        <path class="spark__line" d="M0 46 L22 40 L44 44 L66 30 L88 34 L110 22 L132 26 L154 14 L176 18 L198 8 L220 4"
                               stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
 
                 <ul class="stack" aria-label="Technologies">
-                    <li>Java</li>
-                    <li>Laravel</li>
-                    <li>Python</li>
-                    <li>PostgreSQL</li>
-                    <li>Airflow</li>
+                    <li>Java</li><li>Laravel</li><li>Python</li><li>PostgreSQL</li><li>Airflow</li>
                 </ul>
 
                 <p class="handwrite">Better data<br>Better decisions<br>Higher revenue</p>

@@ -11,7 +11,7 @@
 
         {{-- Étape 3 : @foreach ($projects as $project) depuis le modèle Project --}}
         <div class="grid-3">
-            <article class="project">
+            <article class="project reveal">
                 <div class="project__media"><span>aperçu — projet-1.jpg</span></div>
                 <div class="project__body">
                     <h3>Plateforme de gestion académique</h3>
@@ -22,7 +22,7 @@
                 </div>
             </article>
 
-            <article class="project">
+            <article class="project reveal">
                 <div class="project__media"><span>aperçu — projet-2.jpg</span></div>
                 <div class="project__body">
                     <h3>Dashboard Revenue Assurance</h3>
@@ -33,7 +33,7 @@
                 </div>
             </article>
 
-            <article class="project">
+            <article class="project reveal">
                 <div class="project__media"><span>aperçu — projet-3.jpg</span></div>
                 <div class="project__body">
                     <h3>Automatisation de tâches</h3>

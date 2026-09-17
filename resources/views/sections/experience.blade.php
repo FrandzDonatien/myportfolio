@@ -11,7 +11,7 @@
 
         {{-- Étape 3 : @foreach ($experiences as $experience) depuis le modèle Experience --}}
         <div class="timeline">
-            <article class="tl">
+            <article class="tl reveal">
                 <span class="tl__dot"></span>
                 <div class="tl__top">
                     <span class="tl__ico i-cyan"><x-icon name="building" :size="17" /></span>
@@ -28,7 +28,7 @@
                 </ul>
             </article>
 
-            <article class="tl">
+            <article class="tl reveal">
                 <span class="tl__dot"></span>
                 <div class="tl__top">
                     <span class="tl__ico i-green"><x-icon name="cap" :size="17" /></span>
@@ -45,7 +45,7 @@
                 </ul>
             </article>
 
-            <article class="tl">
+            <article class="tl reveal">
                 <span class="tl__dot"></span>
                 <div class="tl__top">
                     <span class="tl__ico i-indigo"><x-icon name="folder" :size="17" /></span>

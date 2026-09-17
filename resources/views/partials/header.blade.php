@@ -25,7 +25,7 @@
                 </button>
             </div>
 
-            <a class="btn btn--outline" href="{{ asset('cv/frandz-dev.pdf') }}" download>Télécharger CV</a>
+            <a class="btn btn--outline nav__cv" href="{{ asset('cv/frandz-dev.pdf') }}" download>Télécharger CV</a>
 
             <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
                 <x-icon name="menu" :size="18" />

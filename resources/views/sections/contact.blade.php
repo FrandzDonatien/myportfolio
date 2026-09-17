@@ -11,7 +11,7 @@
                 </p>
             </div>
 
-            <div class="contact__list">
+            <div class="contact__list reveal">
                 <p class="contact__item">
                     <x-icon name="mail" :size="16" />
                     <a href="mailto:monemail@exemple.com">monemail@exemple.com</a>
@@ -27,7 +27,7 @@
             </div>
 
             {{-- Étape 4 : <form class="form contact__form" method="POST" action="{{ route('contact.store') }}"> @csrf --}}
-            <form class="form contact__form" novalidate>
+            <form class="form contact__form reveal" novalidate>
                 <div class="form__row">
                     <input class="field" type="text" name="name" placeholder="Votre nom"
                            aria-label="Votre nom" value="{{ old('name') }}" required>

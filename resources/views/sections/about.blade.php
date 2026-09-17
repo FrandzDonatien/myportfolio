@@ -3,7 +3,7 @@
         <x-section-heading number="01" label="À propos" title="Qui suis-je ?" />
 
         <div class="about">
-            <div class="about__text">
+            <div class="about__text reveal">
                 <p class="lead">
                     Je suis un analyste Revenue Assurance et développeur passionné par la data, l'automatisation
                     et les solutions technologiques. J'aime transformer les données en insights et les idées en
@@ -19,7 +19,7 @@
             </div>
 
             {{-- Étape 2 : @foreach (config('portfolio.facts') as $fact) --}}
-            <dl class="facts">
+            <dl class="facts reveal">
                 <div class="fact">
                     <span class="fact__ico"><x-icon name="pin" :size="16" /></span>
                     <div><dt>Localisation</dt><dd>Togo, Lomé</dd></div>
@@ -38,8 +38,9 @@
                 </div>
             </dl>
 
-            <figure class="photo about__photo">
-                <img src="{{ asset('pc.jpg') }}" alt="Poste de travail">
+            <figure class="photo about__photo reveal">
+                {{-- <img src="{{ asset('images/desk.jpg') }}" alt="Poste de travail"> --}}
+                <img src="{{asset('pc.jpg') }}" alt="Franzd DEV">
                 <figcaption class="photo__quote">« La technologie est un outil, l'impact est le but. »</figcaption>
             </figure>
         </div>
