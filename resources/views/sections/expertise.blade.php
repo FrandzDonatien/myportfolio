@@ -12,7 +12,7 @@
 
         {{-- Étape 2 : @foreach (config('portfolio.expertise') as $area) --}}
         <div class="grid-4">
-            <article class="card reveal">
+            <article class="card reveal" data-number="01">
                 <div class="card__head">
                     <span class="card__ico i-green"><x-icon name="chart" :size="17" /></span>
                     <h3>Revenue Assurance</h3>
@@ -25,7 +25,7 @@
                 </ul>
             </article>
 
-            <article class="card reveal">
+            <article class="card reveal" data-number="02">
                 <div class="card__head">
                     <span class="card__ico i-indigo"><x-icon name="database" :size="17" /></span>
                     <h3>Data &amp; BI</h3>
@@ -38,7 +38,7 @@
                 </ul>
             </article>
 
-            <article class="card reveal">
+            <article class="card reveal" data-number="03">
                 <div class="card__head">
                     <span class="card__ico i-red"><x-icon name="code" :size="17" /></span>
                     <h3>Développement</h3>
@@ -51,7 +51,7 @@
                 </ul>
             </article>
 
-            <article class="card reveal">
+            <article class="card reveal" data-number="04">
                 <div class="card__head">
                     <span class="card__ico i-cyan"><x-icon name="server" :size="17" /></span>
                     <h3>Bases de données</h3>

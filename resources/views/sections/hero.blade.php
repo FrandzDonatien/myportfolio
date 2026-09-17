@@ -1,55 +1,141 @@
 <section class="hero" id="accueil">
+
     <div class="wrap hero__in">
-        <div>
-            <p class="hello">Bonjour, je suis</p>
-            <h1>Frandz <em>DEV</em></h1>
-            <p class="hero__role">Analyste Revenue Assurance<br>&amp; Développeur Java / Laravel</p>
-            <p class="hero__text">
-                Passionné par la data, l'automatisation et les solutions technologiques, j'aide les entreprises
-                à mieux analyser, protéger leurs revenus et construire des systèmes fiables et performants.
+
+        {{-- =====================================================
+             LEFT : INTRODUCTION
+             ===================================================== --}}
+        <div class="hero__content">
+
+            <p class="hero__eyebrow">
+                <span></span>
+                Bonjour, je suis
             </p>
 
-            <div class="hero__cta">
-                <a class="btn btn--solid" href="#projets">Voir mes projets <x-icon name="arrow" :size="15" /></a>
-                <a class="btn btn--ghost" href="{{ asset('cv/frandz-dev.pdf') }}" download>
-                    Télécharger mon CV <x-icon name="download" :size="15" />
+            <h1 class="hero__title">
+                Frandz
+                <span>DEV</span>
+            </h1>
+
+            <div class="hero__role">
+                Analyste Revenue Assurance
+                <span>&</span>
+                Développeur Java / Laravel
+            </div>
+
+            <p class="hero__description">
+                Je travaille à l'intersection de la
+                <strong>Revenue Assurance</strong>,
+                de la <strong>data</strong> et du
+                <strong>développement logiciel</strong>.
+                Mon objectif : transformer les données et les processus
+                en solutions fiables, automatisées et utiles au métier.
+            </p>
+
+            <div class="hero__actions">
+
+                <a
+                    href="#projets"
+                    class="btn btn--solid"
+                >
+                    Voir mes projets
+
+                    <x-icon
+                        name="arrow"
+                        :size="15"
+                    />
                 </a>
+
+                <a
+                    href="{{ asset('cv/frandz-dev.pdf') }}"
+                    class="btn btn--ghost"
+                    download
+                >
+                    Télécharger mon CV
+
+                    <x-icon
+                        name="download"
+                        :size="15"
+                    />
+                </a>
+
             </div>
 
             <x-socials />
+
         </div>
 
-        <div class="hero__visual">
-            <div class="portrait">
-                {{-- Dépose la photo détournée dans public/images/portrait.png --}}
-                <img src="{{ asset('user.jpg') }}" alt="Franzd DEV">
-                <p class="portrait__note"></p>
-                <svg class="portrait__ph" viewBox="0 0 300 340" fill="none" aria-hidden="true">
-                    <defs>
-                        <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0" stop-color="#22c55e" stop-opacity=".30"/>
-                            <stop offset="1" stop-color="#22c55e" stop-opacity=".04"/>
-                        </linearGradient>
-                    </defs>
-                    <circle cx="150" cy="96" r="62" fill="url(#pg)"/>
-                    <path d="M28 340c0-68 55-118 122-118s122 50 122 118z" fill="url(#pg)"/>
-                </svg>
 
-                <div class="kpi">
-                    <p class="kpi__label">Revenue Assurance</p>
-                    <p class="kpi__value">+12.5% <x-icon name="trend" :size="15" /></p>
-                    <svg class="spark" viewBox="0 0 220 56" fill="none" preserveAspectRatio="none" aria-hidden="true">
-                        <path class="spark__line" d="M0 46 L22 40 L44 44 L66 30 L88 34 L110 22 L132 26 L154 14 L176 18 L198 8 L220 4"
-                              stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+        {{-- =====================================================
+             RIGHT : VISUAL
+             ===================================================== --}}
+        <div class="hero__visual">
+
+            <div class="hero__image-frame">
+
+                <img
+                    src="{{ asset('user.jpg') }}"
+                    alt="Frandz DEV"
+                    class="hero__image"
+                >
+
+                <div class="hero__image-overlay"></div>
+
+
+                {{-- Small identity label --}}
+                <div class="hero__label">
+                    <span class="hero__label-dot"></span>
+
+                    <div>
+                        <small>Focus</small>
+                        <strong>
+                            Data · Automation · Engineering
+                        </strong>
+                    </div>
                 </div>
 
-                <ul class="stack" aria-label="Technologies">
-                    <li>Java</li><li>Laravel</li><li>Python</li><li>PostgreSQL</li><li>Airflow</li>
-                </ul>
 
-                <p class="handwrite">Better data<br>Better decisions<br>Higher revenue</p>
+                {{-- Technology stack --}}
+                <div class="hero__stack">
+
+                    <span>Java</span>
+                    <span>Laravel</span>
+                    <span>Python</span>
+                    <span>PostgreSQL</span>
+
+                </div>
+
+
+                {{-- Editorial statement --}}
+                <div class="hero__statement">
+                    <span>01</span>
+
+                    <p>
+                        Better data.<br>
+                        Better decisions.
+                    </p>
+                </div>
+
             </div>
+
         </div>
+
     </div>
+
+
+    {{-- Bottom metadata --}}
+    <div class="hero__bottom wrap">
+
+        <span>
+            Based in Lomé, Togo
+        </span>
+
+        <span class="hero__line"></span>
+
+        <span>
+            Revenue Assurance · Software Engineering
+        </span>
+
+    </div>
+
 </section>
